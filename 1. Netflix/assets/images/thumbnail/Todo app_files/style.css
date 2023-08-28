@@ -1,0 +1,182 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100;
+}
+
+.containerbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 200vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+.modal-box {
+  background-color: rgb(161, 168, 240);
+  width: 200px;
+  height: 140px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+#x-mark {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 14px;
+  right: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.modal-input {
+  margin-top: 30px;
+}
+
+.modal-input input {
+  border-style: none;
+  border-radius: 20px;
+  padding: 12px;
+  width: 300px;
+}
+
+.enter-box {
+  padding: 6px 10px 0px 0px;
+}
+
+#enter-icon {
+  margin-top: 30px;
+  width: 22px;
+}
+
+.container {
+  margin-top: 200px;
+}
+
+#title-box {
+  background-color: pink;
+  width: 400px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 25px;
+  color: white;
+}
+
+#title-box button {
+  width: 40px;
+  padding: 4px;
+  font-size: 6px;
+  font-weight: 700;
+  color: white;
+  background-color: rgb(161, 168, 240);
+  border-radius: 4px;
+  border-color: mintcream;
+}
+
+.main-box {
+  background-color: rgba(255, 192, 203, 0.513);
+  width: 400px;
+  padding: 30px 20px 10px 20px;
+}
+
+.main-list-box {
+  background-color: rgb(161, 168, 240);
+  width: 350px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.todo-box {
+  display: flex;
+  position: relative;
+}
+
+.todo-box p {
+  margin-left: 28px;
+}
+
+.todo-uncheck::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  top: 0px;
+  left: 0px;
+}
+
+.todo-check::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #f6f;
+  background-size: cover;
+  background-position: center;
+  top: 0px;
+  left: 0px;
+}
+
+#x-icon {
+  margin-left: 8px;
+}
+
+#ghost {
+  width: 100px;
+}
+
+.empty-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#no-data {
+  font-size: 20px;
+  margin: 10px 0px;
+}

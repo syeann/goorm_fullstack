@@ -1,0 +1,18 @@
+.showcase .content .left {
+    margin-left: 10px !important;
+}
+
+.showcase .content .left img {
+    margin-top: 120px !important;
+    width: 300px;
+}
+
+button {
+    font-size: 13px !important;
+    width: max-content !important;
+    opacity: 0.8;
+}
+
+.card {
+    width: 150px;
+}
