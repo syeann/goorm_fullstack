@@ -43,7 +43,7 @@ class GithubUser {
     try {
       this.showSpinner();
 
-      const response = await fetch(`https://api.github.com/users/${userId}/repos`, {
+      const response = await fetch(`https://api.github.com/users/${searchValue}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -56,15 +56,31 @@ class GithubUser {
       }
 
       const data = await response.json();
-      data.forEach((repoData) => {
-        const userRepoInfos = this.extractRepoInfo(repoData);
-        this.updateUserRepo(userRepoInfos);
-      });
+      this.displayUserInfo(data);
     } catch (error) {
-      console.error(error);
-    } finally {
-      this.hideSpinner();
+      if (error.message === 'User not found') {
+        this.showDefaultUserInfo(searchValue);
+      }
     }
+
+    const response = await fetch(`https://api.github.com/users/${userId}/repos`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'token ' + token,
+      },
+    });
+
+    if (!response.ok && response.status === 404) {
+      throw new Error('User not found');
+    }
+
+    const data = await response.json();
+    data.forEach((repoData) => {
+      const userRepoInfos = this.extractRepoInfo(repoData);
+      this.updateUserRepo(userRepoInfos);
+    });
+  } catch(error) {
   }
 
   displayUserInfo(data) {
@@ -183,5 +199,6 @@ class GithubUser {
     repoContainer.insertAdjacentHTML('beforeend', template);
   }
 }
+
 
 const githubUser = new GithubUser();
