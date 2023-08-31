@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <header id="header">Github Finder App</header>
+  <div id="mainContainer">
+    <div class="searchBox borderBox">
+      <h1 class="mainText softBlackFont flexCenter">Serch GitHub Users</h1>
+      <p class="preyFont flexCenter">Enter a username to fetch a user profile and repos</p>
+      <input type="text" class="searchInput flexCenter" placeholder="Please enter the username to search." />
+      <p id="validationMessage"></p>
+    </div>
+    <div class="borderBox flexCenter emptyText" id="errorBox" style="display: none"></div>
+    <div class="borderBox profileBox flexCenter">
+      <div class="flexColumn">
+        <img id="userImg" src="/images/1-1.png" alt="userImage" width="140px" />
+        <button class="profileBtn blue">View Profile</button>
+      </div>
+      <div class="infoBox">
+        <div class="tags tagBox flexRow">
+          <div class="tag1 blue">Public Repos:</div>
+          <div class="tag2 grey">Public Gists:</div>
+          <div class="tag3 green">Followers:</div>
+          <div class="tag4 pink">Following:</div>
+        </div>
+        <div class="infoTexts softBlackFont">
+          <div class="info1 infoBorderBox">Company:</div>
+          <div class="info2 infoBorderBox">Website & Blog:</div>
+          <div class="info3 infoBorderBox">Location:</div>
+          <div class="info4 infoBorderBox">Member Since:</div>
+        </div>
+      </div>
+    </div>
+    <h2 class="subTitle softBlackFont flexCenter">Lastest Repos</h2>
+    <div id="repoContainer"></div>
+  </div>
+  <footer id="footer">Github Finder ⓒ</footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
